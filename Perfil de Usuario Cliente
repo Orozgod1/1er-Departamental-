@@ -1,0 +1,127 @@
+Pagina principal para usuario cliente
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página principal para clientes.">
+    <title>Página Principal - Cliente</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .navbar {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .profile-info {
+            margin-bottom: 20px;
+        }
+
+        .profile-info p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        .customer-section {
+            margin-top: 30px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="#">Inicio</a>
+        <a href="#">Mi Perfil</a>
+        <a href="#">Ajustes</a>
+        <a href="#">Cerrar Sesión</a>
+    </div>
+
+    <div class="container">
+        <!-- Información del cliente -->
+        <div class="profile-info">
+            <h1>Bienvenido, <span id="username">Nombre del Cliente</span></h1>
+            <p>Rol: Cliente</p>
+        </div>
+
+        <!-- Sección para clientes -->
+        <div id="customer-section" class="customer-section">
+            <h2 class="section-title">Acciones Disponibles</h2>
+            <p>Puedes ver productos o realizar un pedido:</p>
+            <button id="view-products">Ver Productos</button>
+            <button id="make-order">Realizar Pedido</button>
+        </div>
+    </div>
+
+    <script>
+        // Simulación del perfil del usuario (esta información normalmente se obtendría de un servidor)
+        const userProfile = {
+            username: "Carlos Rodríguez",
+            role: "client"  // Rol del usuario es 'client' en este caso
+        };
+
+        // Mostrar los datos del cliente en la página
+        document.getElementById('username').textContent = userProfile.username;
+
+        // Agregar eventos a los botones para realizar acciones
+        document.getElementById('view-products').addEventListener('click', function() {
+            alert('Funcionalidad para ver productos disponibles');
+        });
+
+        document.getElementById('make-order').addEventListener('click', function() {
+            alert('Funcionalidad para realizar un pedido');
+        });
+    </script>
+</body>
+</html>
