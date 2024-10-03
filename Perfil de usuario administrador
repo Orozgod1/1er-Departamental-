@@ -1,0 +1,128 @@
+Página principal por perfil de usuario administrador
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página principal para usuarios registrados.">
+    <title>Página Principal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .navbar {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .profile-info {
+            margin-bottom: 20px;
+        }
+
+        .profile-info p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        .product-section {
+            margin-top: 30px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="#">Inicio</a>
+        <a href="#">Mi Perfil</a>
+        <a href="#">Ajustes</a>
+        <a href="#">Cerrar Sesión</a>
+    </div>
+
+    <div class="container">
+        <!-- Información del usuario -->
+        <div class="profile-info">
+            <h1>Bienvenido, <span id="username">Nombre del Usuario</span></h1>
+            <p>Rol: <span id="user-role">Usuario Regular</span></p>
+        </div>
+
+        <!-- Sección de productos -->
+        <div id="product-section" class="product-section">
+            <h2 class="section-title">Gestión de Productos</h2>
+            <p>Puedes agregar o modificar productos:</p>
+            <button id="add-product">Agregar Producto</button>
+            <button id="modify-product">Modificar Producto</button>
+        </div>
+    </div>
+
+    <script>
+        // Simulación del perfil del usuario (esta información normalmente se obtendría de un servidor)
+        const userProfile = {
+            username: "Juan Pérez",
+            role: "admin"  // Puede ser 'admin' o 'user'
+        };
+
+        // Mostrar los datos del usuario en la página
+        document.getElementById('username').textContent = userProfile.username;
+        document.getElementById('user-role').textContent = userProfile.role === 'admin' ? 'Administrador' : 'Usuario Regular';
+
+        // Agregar evento a los botones para que realicen acciones
+        document.getElementById('add-product').addEventListener('click', function() {
+            alert('Funcionalidad para agregar productos');
+        });
+
+        document.getElementById('modify-product').addEventListener('click', function() {
+            alert('Funcionalidad para modificar productos');
+        });
+    </script>
+</body>
+</html>
