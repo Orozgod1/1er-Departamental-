@@ -1,0 +1,129 @@
+Login Page 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Inicia sesión o regístrate para acceder a tu cuenta.">
+    <title>Inicio de Sesión y Registro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        .toggle-link {
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        .toggle-link a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .toggle-link a:hover {
+            text-decoration: underline;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        function toggleForm() {
+            const loginForm = document.getElementById('login-form');
+            const registerForm = document.getElementById('register-form');
+            const isLoginVisible = !loginForm.classList.contains('hidden');
+
+            if (isLoginVisible) {
+                loginForm.classList.add('hidden');
+                registerForm.classList.remove('hidden');
+            } else {
+                loginForm.classList.remove('hidden');
+                registerForm.classList.add('hidden');
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Formulario de Inicio de Sesión -->
+        <div id="login-form">
+            <h1>Iniciar Sesión</h1>
+            <form action="login.php" method="post">
+                <input type="text" name="username" placeholder="Usuario" required>
+                <input type="password" name="password" placeholder="Contraseña" required>
+                <button type="submit">Ingresar</button>
+            </form>
+
+            <div class="toggle-link">
+                <p>¿No tienes una cuenta? <a href="javascript:void(0)" onclick="toggleForm()">Regístrate aquí</a></p>
+            </div>
+        </div>
+
+        <!-- Formulario de Registro (Oculto por defecto) -->
+        <div id="register-form" class="hidden">
+            <h1>Regístrate</h1>
+            <form action="register.php" method="post">
+                <input type="text" name="fullname" placeholder="Nombre Completo" required>
+                <input type="email" name="email" placeholder="Correo Electrónico" required>
+                <input type="text" name="username" placeholder="Usuario" required>
+                <input type="password" name="password" placeholder="Contraseña" required>
+                <button type="submit">Crear Cuenta</button>
+            </form>
+
+            <div class="toggle-link">
+                <p>¿Ya tienes una cuenta? <a href="javascript:void(0)" onclick="toggleForm()">Inicia sesión aquí</a></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
